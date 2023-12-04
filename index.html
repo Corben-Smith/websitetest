@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./tailslim.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
-    HTiasdlfjasldkjfa;sldkjf;aslkdjf;alksjdf;lakjsdf
+
+<script type="text/javascript">
+    var smashNumber = 0;
+    var passNumber = 0;
+    var index = 0;
+    function smashClick(){
+        var smashField = document.getElementById("smashField");
+        smashNumber++;
+        smashField.innerHTML = smashNumber;
+        nextImg();
+    }
+    function passClick(){
+        var passField = document.getElementById("passField");
+        passNumber++;
+        passField.innerHTML = passNumber;
+        nextImg();
+    }
+    function nextImg(){
+        var image = document.getElementById("img");
+        image.src = "${i++}.png";
+    }
+</script>
+
+<body class="bg-slate-400">
+    <div class="grid grid-cols-2">
+        <img id="img"src="img.png" class="w-full">
+        <ul class="bg-orange-200 rounded-xl mx-6 my-4">
+            <li class="mt-4 mx-4 text-center border-solid border-red-700 border-b-2">Name</li>
+            <li class="mt-4 mx-4">Name</li>
+            <li class="mt-4 mx-4">Name</li>
+            <li class="mt-4 mx-4">Name</li>
+            <li class="mt-4 mx-4">Name</li>
+        </ul>
+    </div>
+    <div class="grid grid-cols-2">
+        <h1 id="smashField" class="text-center bg-white py-6 h-full">0</h1>
+        <h1 id="passField"  class="text-center bg-white py-6 h-full">0</h1>
+    </div>
+    <div class=" grid grid-cols-2">
+        <button type="button" class="py-12 w-full bg-red-500 hover:bg-red-600 " onclick="smashClick()">Smash</button>    
+        <button type="button" class = "py-12 w-full bg-blue-500 hover:bg-blue-600" onclick="passClick()">Pass</button>
+    </div>
 </body>
 </html>
